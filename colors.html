@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorDocument</title>
+
+<style>
+    button{
+        font-size:24px;
+        align-items: center;
+    }
+</style>
+</head>
+<body>
+    <h1>Colors</h1>
+    <div>
+        <button onclick="Start()">Start</button>
+        <button onclick="Stop()">Stop</button>
+    </div>
+    
+    <script>
+        let s;
+        var arr=["orange","orangered","cyan","green","crimson","pink","skyblue"]
+        var i=0
+
+        function Start(){
+                s=setInterval(()=>{
+            
+                 a=document.body.setAttribute('style','background:'+arr[i++])
+                 if(i==arr.length){
+                   // clearInterval(a);
+                    i=0;
+                 }
+                 
+                 },1000)
+
+                }
+        function Stop(){
+            clearInterval(s);
+        }
+      
+    </script>
+</body>
+</html>
